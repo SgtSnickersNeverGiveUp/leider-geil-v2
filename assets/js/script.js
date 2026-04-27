@@ -230,16 +230,18 @@ async function renderVideoGallery() {
   if (!grid) return;
 
   try {
-    const res = await fetch(SITE_CONFIG.videosApi || '/api/videos');
+    // Direkt statische JSON laden, kein /api/videos mehr
+    const res = await fetch(SITE_CONFIG.videosPath || '/assets/data/videos.json');
     if (!res.ok) throw new Error(`Videos fetch ${res.status}`);
     const videos = await res.json();
 
-    if (videos.length === 0) {
-      grid.innerHTML = '<p style="color:var(--clr-text-muted);text-align:center;font-family:var(--ff-mono);font-size:.9rem;">Noch keine Videos vorhanden.</p>';
+    if (!Array.isArray(videos) || videos.length === 0) {
+      grid.innerHTML =
+        '<p style="color:var(--clr-text-muted);text-align:center;font-family:var(--ff-mono);font-size:.9rem;">Noch keine Videos vorhanden.</p>';
       return;
     }
 
-        grid.innerHTML = videos.map(v => {
+    grid.innerHTML = videos.map(v => {
       const platform = (v.platform || 'youtube').toLowerCase();
 
       const targetUrl =
@@ -247,11 +249,12 @@ async function renderVideoGallery() {
           ? v.url
           : (v.url || `https://www.youtube.com/watch?v=${v.videoId}`);
 
-      const thumb = v.thumbnail && v.thumbnail.trim()
-        ? v.thumbnail
-        : (platform === 'twitch'
-            ? '/assets/img/twitch-placeholder.jpg'
-            : '/assets/img/youtube-placeholder.jpg');
+      const thumb =
+        v.thumbnail && v.thumbnail.trim()
+          ? v.thumbnail
+          : (platform === 'twitch'
+              ? '/assets/img/twitch-placeholder.jpg'
+              : '/assets/img/youtube-placeholder.jpg');
 
       const platformLabel = platform === 'twitch' ? 'Twitch' : 'YouTube';
 
@@ -268,7 +271,8 @@ async function renderVideoGallery() {
     }).join('');
   } catch (err) {
     console.error('[Videos]', err);
-    grid.innerHTML = '';
+    grid.innerHTML =
+      '<p style="color:var(--clr-danger);text-align:center;font-family:var(--ff-mono);font-size:.9rem;">Videos konnten nicht geladen werden.</p>';
   }
 }
 

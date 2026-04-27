@@ -1,0 +1,16 @@
+[
+  {
+    "id": "v001",
+    "title": "Leider Geil – Scrim Highlights",
+    "platform": "youtube",
+    "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "thumbnail": "/assets/img/youtube-placeholder.jpg"
+  },
+  {
+    "id": "v002",
+    "title": "ARC Raiders – Extraction Win",
+    "platform": "twitch",
+    "url": "https://www.twitch.tv/videos/123456789",
+    "thumbnail": "/assets/img/twitch-placeholder.jpg"
+  }
+]
