@@ -250,11 +250,11 @@ async function renderVideoGallery() {
           : (v.url || `https://www.youtube.com/watch?v=${v.videoId}`);
 
       const thumb =
-        v.thumbnail && v.thumbnail.trim()
-          ? v.thumbnail
-          : (platform === 'twitch'
-              ? '/assets/img/twitch-placeholder.jpg'
-              : '/assets/img/youtube-placeholder.jpg');
+  v.thumbnail && v.thumbnail.trim()
+    ? v.thumbnail
+    : (platform === 'twitch'
+        ? '/assets/img/events/twitch-placeholder.jpeg'
+        : '/assets/img/events/youtube-placeholder.webp');
 
       const platformLabel = platform === 'twitch' ? 'Twitch' : 'YouTube';
 
