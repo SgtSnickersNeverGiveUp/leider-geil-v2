@@ -501,25 +501,17 @@ document.addEventListener('DOMContentLoaded', () => {
   initRipple();
   initEventForm();
 
-  /* NEU: Bewerbungs‑ und Event‑Form → Discord */
   initRecruitFormDiscord();
   initEventSignupDiscord();
 
-  /* Daten laden */
-  // renderRoster(); // <-- Entfernt: Du nutzt loadPublicRoster() anstatt renderRoster()
   renderTimeline();
   renderVideoGallery();
-  renderHeaderBanner();
-
-  /* Live‑Status: sofort + Intervall */
+  // renderHeaderBanner();   // Banner/Settings später per statischer JSON
   fetchDiscordStatus();
   fetchTwitchStatus();
   startLiveUpdates();
 
-  /* Clan News Ticker starten */
-  initClanNewsTicker();
-
-  /* Öffentliches Roster (nur für Seiten, die es brauchen) */
+  // initClanNewsTicker();   // Ticker-API vorerst deaktiviert
   loadPublicRoster();
 });
 
