@@ -1405,3 +1405,34 @@ img { max-width: 100%; display: block; }
   white-space: nowrap !important;   /* absolut kein Umbruch */
   line-height: 1.2 !important;
 }
+/* Clan News Ticker Labels */
+.ticker-label {
+  font-family: var(--ff-mono, "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.2rem;
+  margin-right: 0.35rem;
+}
+
+/* PUBG */
+.ticker-label--pubg {
+  background-color: rgba(255, 193, 7, 0.15);
+  color: #ffc107;
+  border: 1px solid rgba(255, 193, 7, 0.6);
+}
+
+/* ARC Raiders */
+.ticker-label--arc-raiders {
+  background-color: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.6);
+}
+
+/* Allgemein / Neutral */
+.ticker-label--allgemein {
+  background-color: rgba(148, 163, 184, 0.15);
+  color: #e5e7eb;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+}

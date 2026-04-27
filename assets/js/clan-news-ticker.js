@@ -10,26 +10,34 @@ document.addEventListener('DOMContentLoaded', () => {
     .then((items) => {
       if (!Array.isArray(items) || items.length === 0) return;
 
-      const texts = items
-        .map((n) => {
-          const rawText = n.text && n.text.trim();
-          if (!rawText) return null;
+   const texts = items
+  .map((n) => {
+    const rawText = n.text && n.text.trim();
+    if (!rawText) return null;
 
-          const game = (n.game || '').trim();
-          const type = (n.type || '').trim();
+    const game = (n.game || '').trim();
+    const type = (n.type || '').trim();
 
-          let label = '';
-          if (game && type) {
-            label = `[${game} · ${type}] `;
-          } else if (game) {
-            label = `[${game}] `;
-          } else if (type) {
-            label = `[${type}] `;
-          }
+    let labelText = '';
+    if (game && type) {
+      labelText = `${game} · ${type}`;
+    } else if (game) {
+      labelText = game;
+    } else if (type) {
+      labelText = type;
+    }
 
-          return `${label}${rawText}`;
-        })
-        .filter((t) => t && t.trim().length > 0);
+    if (!labelText) {
+      return rawText;
+    }
+
+    const gameKey = game.toLowerCase().replace(/\s+/g, '-'); // "ARC Raiders" -> "arc-raiders"
+
+    const labelClass = `ticker-label ticker-label--${gameKey}`;
+
+    return `<span class="${labelClass}">[${labelText}]</span> ${rawText}`;
+  })
+  .filter((t) => t && t.trim().length > 0);
 
       if (texts.length === 0) return;
 
