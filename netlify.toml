@@ -1,0 +1,8 @@
+# Bundle-Konfiguration für Netlify Functions.
+#
+# `included_files` sorgt dafür, dass alle JSON-Dateien aus dem Repo-Ordner
+# `assets/data/news/` zusammen mit jeder Function deployed werden. Das passt
+# zum Pfad, den `netlify/functions/news.mts` zur Laufzeit über
+# `process.cwd()/assets/data/news/` einliest.
+[functions]
+  included_files = ["assets/data/news/**"]
