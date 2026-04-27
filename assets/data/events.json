@@ -6,7 +6,7 @@
     "game": "PUBG",
     "type": "event",
     "description": "Interne Scrims mit Mixed-Lobbies.",
-    "image": "/assets/img/events/scrim-banner.jpg"
+    "image": "/assets/img/events/scrim-banner.jpeg"
   },
   {
     "id": "e002",
@@ -15,6 +15,6 @@
     "game": "ARC Raiders",
     "type": "event",
     "description": "Koordinierte Raid-Session mit Voice-Callouts.",
-    "image": "/assets/img/events/arc-raid.jpg"
+    "image": "/assets/img/events/arc-raid.jpeg"
   }
 ]
