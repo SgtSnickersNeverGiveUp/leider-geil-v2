@@ -1,14 +1,20 @@
 [
   {
     "id": "n001",
-    "text": "Scrim am Freitag, 21:00 Uhr – melde dich im Discord an."
+    "game": "PUBG",
+    "type": "scrim",
+    "text": "Freitags-Scrim um 21:00 Uhr – melde dich im Discord an."
   },
   {
     "id": "n002",
+    "game": "ARC Raiders",
+    "type": "raid",
     "text": "ARC Raiders Raid Night jeden Samstag, 20:30 Uhr."
   },
   {
     "id": "n003",
+    "game": "Allgemein",
+    "type": "info",
     "text": "Neue Bewerbungen willkommen – schau auf der Bewerben-Seite vorbei."
   }
 ]

@@ -11,11 +11,29 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!Array.isArray(items) || items.length === 0) return;
 
       const texts = items
-        .map((n) => n.text)
+        .map((n) => {
+          const rawText = n.text && n.text.trim();
+          if (!rawText) return null;
+
+          const game = (n.game || '').trim();
+          const type = (n.type || '').trim();
+
+          let label = '';
+          if (game && type) {
+            label = `[${game} · ${type}] `;
+          } else if (game) {
+            label = `[${game}] `;
+          } else if (type) {
+            label = `[${type}] `;
+          }
+
+          return `${label}${rawText}`;
+        })
         .filter((t) => t && t.trim().length > 0);
+
       if (texts.length === 0) return;
 
-      const speedSeconds = 40; // kannst du später variabel machen
+      const speedSeconds = 40; // ggf. in SITE_CONFIG auslagern
       const separator = '   ●   ';
 
       tickerItemsEl.innerHTML = texts.join(separator);
