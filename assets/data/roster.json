@@ -3,7 +3,7 @@
     "id": "m001",
     "name": "SgtSnickers",
     "role": "Gründer / IGL",
-    "avatar": "/api/roster-avatar?id=m001",
+    "avatar": "/assets/img/roster/sgt.jpg"
     "games": ["PUBG", "ARC Raiders"],
     "stats": { "kd": 3.42, "extractionRate": "68%", "wins": 214 },
     "clanRole": "Leader",
@@ -14,7 +14,7 @@
     "id": "m002",
     "name": "FragMaster",
     "role": "Squad Leader – PUBG",
-    "avatar": "/api/roster-avatar?id=m002",
+    "avatar": "/assets/img/roster/fragmaster.jpg"
     "games": ["PUBG"],
     "stats": { "kd": 2.87, "extractionRate": "52%", "wins": 156 },
     "clanRole": "Officer",
@@ -25,7 +25,7 @@
     "id": "m003",
     "name": "NeonViper",
     "role": "Support / Medic",
-    "avatar": "/api/roster-avatar?id=m003",
+    "avatar": "/assets/img/roster/neonviper.jpg"
     "games": ["ARC Raiders"],
     "stats": { "kd": 1.94, "extractionRate": "74%", "wins": 98 },
     "clanRole": "Member",
@@ -36,7 +36,7 @@
     "id": "m004",
     "name": "GhostRecon",
     "role": "Sniper",
-    "avatar": "/api/roster-avatar?id=m004",
+    "avatar": "/assets/img/roster/ghostrecon.jpg"
     "games": ["PUBG", "ARC Raiders"],
     "stats": { "kd": 4.11, "extractionRate": "61%", "wins": 189 },
     "clanRole": "Member",
