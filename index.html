@@ -210,7 +210,7 @@
   (async function () {
     try {
       // API für Settings, wie im Admin: const SETTINGSAPI = 'api/settings'
-      const res = await fetch('/api/settings');
+      const res = await fetch('/.netlify/functions/settings');
       if (!res.ok) throw new Error('HTTP ' + res.status);
       const settings = await res.json();
 
