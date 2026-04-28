@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/img/uploads"
+public_folder: "/assets/img/uploads"
+
+collections:
+  - name: "site_settings"
+    label: "Site Settings"
+    files:
+      - name: "header"
+        label: "Header Banner"
+        file: "assets/data/site-settings.json"
+        fields:
+          - name: "headerBanner"
+            label: "Header Banner"
+            widget: "object"
+            fields:
+              - { name: "image", label: "Banner Image", widget: "image" }
+              - { name: "alt", label: "Alt Text", widget: "string" }

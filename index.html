@@ -206,6 +206,46 @@
   <script src="assets/js/config.js"></script>
   <script src="assets/js/script.js"></script>
   <script src="assets/js/clan-news-ticker.js"></script>
+  <script>
+  (async function () {
+    try {
+      // API für Settings, wie im Admin: const SETTINGSAPI = 'api/settings'
+      const res = await fetch('/.netlify/functions/settings');
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const settings = await res.json();
+
+      // Wenn kein Banner konfiguriert ist, einfach nichts anzeigen
+      if (!settings.bannerUrl) return;
+
+      const bannerSection = document.getElementById('header-banner');
+      const bannerImg = document.getElementById('header-banner-img');
+
+      if (!bannerSection || !bannerImg) return;
+
+      // Falls du irgendwann wieder über /api/banner-image gehst:
+      // const imgUrl = settings.bannerUrl.startsWith('/api/banner-image')
+      //   ? settings.bannerUrl + (settings.bannerUrl.includes('?') ? '&' : '?') + 't=' + Date.now()
+      //   : settings.bannerUrl;
+
+      const imgUrl = settings.bannerUrl;
+
+      bannerImg.src = imgUrl;
+      bannerImg.alt = settings.bannerAlt || 'Header Banner';
+
+      // Erst anzeigen, wenn Bild geladen ist
+      bannerImg.addEventListener('load', function () {
+        bannerSection.style.display = 'block';
+      });
+
+      // Wenn es knallt, Banner ausgeblendet lassen
+      bannerImg.addEventListener('error', function () {
+        console.error('Banner-Bild konnte nicht geladen werden:', imgUrl);
+      });
+    } catch (err) {
+      console.error('Header-Banner laden fehlgeschlagen:', err);
+    }
+  })();
+</script>
 </body>
 </html>
 
