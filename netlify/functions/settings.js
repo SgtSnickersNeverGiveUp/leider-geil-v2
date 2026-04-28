@@ -2,7 +2,7 @@ exports.handler = async (event) => {
   try {
     const settings = {
       bannerUrl: "https://luminous-souffle-5656c2.netlify.app/assets/img/banner-test.jpg",
-      newsTickerText: "Scrims am Freitag 20:00 Uhr – Anmeldung im Discord.",
+      newsTickerText: "",
       tickerSpeedSeconds: 40,
       tickerSeparator: " • "
     };
