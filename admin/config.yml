@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: SgtSnickersNeverGiveUp/leider-geil-v2
+  name: git-gateway
   branch: main
 
 media_folder: "assets/img/uploads"
