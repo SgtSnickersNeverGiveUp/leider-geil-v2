@@ -1,31 +1,22 @@
-exports.handler = async (event, context) => {
+exports.handler = async (event) => {
   try {
-    // Nur GET zulassen (optional)
-    if (event.httpMethod !== 'GET') {
-      return {
-        statusCode: 405,
-        body: JSON.stringify({ error: 'Method not allowed' }),
-      };
-    }
-
-    // Statische Demo-Daten – hier kannst du später echte Daten einbauen
     const settings = {
-      bannerUrl: null,          // oder eine echte Bild-URL
-      newsTickerText: '',
+      bannerUrl: "https://luminous-souffle-5656c2.netlify.app/assets/img/banner-test.jpg",
+      newsTickerText: "Scrims am Freitag 20:00 Uhr – Anmeldung im Discord.",
       tickerSpeedSeconds: 40,
-      tickerSeparator: ' • ',
+      tickerSeparator: " • "
     };
 
     return {
       statusCode: 200,
-      headers: { 'Content-Type': 'application/json' },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(settings),
     };
   } catch (err) {
-    console.error('settings function error', err);
+    console.error("settings error", err);
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'Internal Server Error' }),
+      body: JSON.stringify({ error: "Internal Server Error" }),
     };
   }
 };
